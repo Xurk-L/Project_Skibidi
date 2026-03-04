@@ -25,13 +25,13 @@
 
                     <span class="logo-text">Skibidi Maps</span>
                 </div>
-                
+
                 <form class="search-box">
                     <input type="text" placeholder="Search location...">
                     <button type="submit" class="search-btn">
                         <svg viewBox="0 0 24 24" width="18" height="18" fill="white">
                             <path
-                            d="M10 2a8 8 0 105.293 14.293l4.207 4.207 1.414-1.414-4.207-4.207A8 8 0 0010 2zm0 2a6 6 0 110 12 6 6 0 010-12z" />
+                                d="M10 2a8 8 0 105.293 14.293l4.207 4.207 1.414-1.414-4.207-4.207A8 8 0 0010 2zm0 2a6 6 0 110 12 6 6 0 010-12z" />
                         </svg>
                     </button>
                 </form>
@@ -94,14 +94,16 @@
     </div>
 
     <script>
+        // ส่วนจัดการการเลือกประเภทห้องน้ำ (คงเดิม)
         const toiletItems = document.querySelectorAll(".toilet-item");
 
         toiletItems.forEach(item => {
             item.addEventListener("click", () => {
-                item.classList.toggle("active"); // กดได้หลายอัน
+                item.classList.toggle("active");
             });
         });
 
+        // ส่วนจัดการการลาก Mobile Bottom Sheet (ปรับปรุงให้รองรับมือถือ)
         const sheet = document.querySelector(".mobile-bottom-sheet");
         const grabHeader = document.querySelector(".grab-header");
 
@@ -109,36 +111,60 @@
         let startY = 0;
         let startBottom = 0;
 
-        // ตำแหน่งสูงสุด (ตอนมันเปิดสุด)
         const MAX_BOTTOM = 0;
-
-        // ลากได้ต่ำสุด (ปรับได้ตามต้องการ)
         const MIN_BOTTOM = -250;
 
-        grabHeader.addEventListener("mousedown", (e) => {
+        // ฟังก์ชันเริ่มต้นการลาก
+        function startDrag(e) {
             isDragging = true;
-            startY = e.clientY;
-            startBottom = parseInt(window.getComputedStyle(sheet).bottom);
-        });
+            // ตรวจสอบว่าเป็น Touch (มือถือ) หรือ Mouse
+            startY = e.type === "touchstart" ? e.touches[0].clientY : e.clientY;
+            startBottom = parseInt(window.getComputedStyle(sheet).bottom) || 0;
 
-        document.addEventListener("mousemove", (e) => {
+            // ปิด transition ชั่วคราวเพื่อให้ลากแล้วขยับตามนิ้วทันที
+            sheet.style.transition = "none";
+        }
+
+        // ฟังก์ชันขณะกำลังลาก
+        function onDrag(e) {
             if (!isDragging) return;
 
-            const delta = startY - e.clientY;
+            // ป้องกันหน้าจอหลักเลื่อนขณะลาก sheet บนมือถือ
+            if (e.type === "touchmove") {
+                // e.preventDefault(); // เปิดใช้ถ้าต้องการล็อคหน้าจอไม่ให้ขยับเลย
+            }
+
+            const currentY = e.type === "touchmove" ? e.touches[0].clientY : e.clientY;
+            const delta = startY - currentY;
             let newBottom = startBottom + delta;
 
-            // จำกัดไม่ให้เกินบนสุด
+            // จำกัดขอบเขตการลาก
             if (newBottom > MAX_BOTTOM) newBottom = MAX_BOTTOM;
-
-            // จำกัดไม่ให้ต่ำเกินไป
             if (newBottom < MIN_BOTTOM) newBottom = MIN_BOTTOM;
 
             sheet.style.bottom = newBottom + "px";
-        });
+        }
 
-        document.addEventListener("mouseup", () => {
+        // ฟังก์ชันหยุดลาก
+        function stopDrag() {
+            if (!isDragging) return;
             isDragging = false;
-        });
+
+            // ใส่ transition กลับคืนเพื่อให้ตอนปล่อยแล้วดูนุ่มนวล
+            sheet.style.transition = "bottom 0.3s ease-out";
+        }
+
+        // --- ติดตั้ง Event Listeners ---
+
+        // สำหรับเมาส์ (PC)
+        grabHeader.addEventListener("mousedown", startDrag);
+        document.addEventListener("mousemove", onDrag);
+        document.addEventListener("mouseup", stopDrag);
+
+        // สำหรับนิ้วสัมผัส (มือถือ)
+        grabHeader.addEventListener("touchstart", startDrag, { passive: true });
+        document.addEventListener("touchmove", onDrag, { passive: false });
+        document.addEventListener("touchend", stopDrag); F
     </script>
 </body>
 

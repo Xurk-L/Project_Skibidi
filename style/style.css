@@ -25,6 +25,10 @@ body {
   font-family: "Prompt", sans-serif;
 }
 
+input, button, select, textarea {
+  font-family: "Prompt", sans-serif;
+}
+
 /* ================= LAYOUT ================= */
 
 .layout {

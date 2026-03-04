@@ -377,6 +377,7 @@
 /* ================= Reviews ================= */
 
 .reviews-content{
+    display: none;
     padding: 10px;
     width: 100%;
 }

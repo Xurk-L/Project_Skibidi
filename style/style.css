@@ -25,7 +25,11 @@ body {
   font-family: "Prompt", sans-serif;
 }
 
-input, button, select, textarea, ::placeholder {
+input,
+button,
+select,
+textarea,
+::placeholder {
   font-family: "Prompt", sans-serif;
 }
 
@@ -153,6 +157,11 @@ input, button, select, textarea, ::placeholder {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: auto;
+  /* หรือใช้ hidden ถ้าคุณจะใช้ Library แผนที่อย่าง Google Maps/Leaflet เพราะพวกนั้นจะจัดการการเลื่อนเอง */
+  touch-action: pan-x pan-y;
+  /* อนุญาตให้ลากนิ้วในแกน X และ Y ได้เฉพาะในพื้นที่นี้ */
+  position: relative;
 }
 
 .map-placeholder {

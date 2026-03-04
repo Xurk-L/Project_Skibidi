@@ -1,3 +1,13 @@
+body {
+    margin: 0;
+    height: 100vh;
+    /* บังคับความสูงเท่าหน้าจอพอดี */
+    overflow: hidden;
+    /* ล็อคไม่ให้หน้าเว็บหลักเลื่อนขึ้นลง */
+    display: flex;
+    flex-direction: column;
+}
+
 /* ================= INFO SIDEBAR ================= */
 
 .info-sidebar {
@@ -143,29 +153,35 @@
 /* ปรับตำแหน่งกลุ่ม tabs */
 .folder-tabs {
     position: fixed;
-    bottom: -100px; /* ความสูงของ sheet */
+    bottom: -100px;
+    /* ความสูงของ sheet */
     left: 20px;
     display: flex;
-    z-index: 990; /* ให้น้อยกว่า sheet (999) */
+    z-index: 990;
+    /* ให้น้อยกว่า sheet (999) */
     pointer-events: auto;
     transition: 0.4s ease;
 }
 
 .folder-tab {
-    padding: 10px 25px; /* เพิ่ม padding ให้กว้างขึ้นเล็กน้อย */
+    padding: 10px 25px;
+    /* เพิ่ม padding ให้กว้างขึ้นเล็กน้อย */
     background-color: #FFD270;
     color: #ffffff;
     border-radius: 15px 15px 0 0;
     cursor: pointer;
     transition: all 0.3s ease;
-    margin-bottom: -2px; /* ให้จมลงไปใน sheet นิดหน่อย */
+    margin-bottom: -2px;
+    /* ให้จมลงไปใน sheet นิดหน่อย */
     position: relative;
 }
 
 /* ทำให้ Tab ซ้อนกัน */
-.folder-tab + .folder-tab {
-    margin-left: -20px; /* ขยับ Tab ตัวที่สองมาทับตัวแรก */
-    z-index: 1; /* ตัวหลังอยู่บนตัวแรก (หรือปรับตามชอบ) */
+.folder-tab+.folder-tab {
+    margin-left: -20px;
+    /* ขยับ Tab ตัวที่สองมาทับตัวแรก */
+    z-index: 1;
+    /* ตัวหลังอยู่บนตัวแรก (หรือปรับตามชอบ) */
 }
 
 /* ปรับแต่ง Tab ที่ Active */
@@ -174,15 +190,16 @@
     color: #000000;
     font-weight: 600;
     /* ใส่ transform ทั้ง X และ Y ตามที่ต้องการ */
-    transform: translate(0px, -8px); 
-    z-index: 5; /* เมื่อ active ให้ลอยขึ้นมาเด่นกว่าเพื่อน */
+    transform: translate(0px, -8px);
+    z-index: 5;
+    /* เมื่อ active ให้ลอยขึ้นมาเด่นกว่าเพื่อน */
 }
 
-.folder-tab.directions.active{
+.folder-tab.directions.active {
     box-shadow: 4px 1px 4px #00000040;
 }
 
-.folder-tab.reviews.active{
+.folder-tab.reviews.active {
     box-shadow: -4px 1px 4px #00000040;
 }
 
@@ -191,11 +208,11 @@
     font-size: 13px;
 }
 
-.flex{
+.flex {
     display: flex;
 }
 
-.box-tags{
+.box-tags {
     padding: 5px;
     background-color: #D9D9D9;
     font-size: 10px;
@@ -316,24 +333,8 @@
     box-shadow: none !important;
 }
 
-.sheet-tabs {
-    position: absolute;
-    top: -35px;
-    left: 20px;
-    display: flex;
-    gap: 5px;
-}
-
-.sheet-tab {
-    padding: 10px 18px;
-    background: #ddd;
-    border-radius: 12px 12px 0 0;
-    cursor: pointer;
-    font-size: 14px;
-}
-
-.sheet-tab.active {
-    background: #FFD270;
+.mobile-bottom-sheet .image-gallery {
+    display: none;
 }
 
 .sheet-tabs {
@@ -356,18 +357,40 @@
     background: #FFD270;
 }
 
-.directions-content{
+.sheet-tabs {
+    position: absolute;
+    top: -35px;
+    left: 20px;
+    display: flex;
+    gap: 5px;
+}
+
+.sheet-tab {
+    padding: 10px 18px;
+    background: #ddd;
+    border-radius: 12px 12px 0 0;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.sheet-tab.active {
+    background: #FFD270;
+}
+
+.directions-content {
     display: flex;
     padding: 10px;
     gap: 10px;
     width: 100%;
 }
-.directions-content .left{
+
+.directions-content .left {
     flex: 1;
     display: flex;
     flex-direction: column;
 }
-.directions-content .right{
+
+.directions-content .right {
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -376,22 +399,22 @@
 
 /* ================= Reviews ================= */
 
-.reviews-content{
+.reviews-content {
     display: none;
     padding: 10px;
     width: 100%;
 }
 
-.top-header{
+.top-header {
     display: flex;
     width: 100%;
 }
 
-.header-left{
+.header-left {
     flex: 1;
 }
 
-.header-right{
+.header-right {
     flex: 1;
 }
 
@@ -402,7 +425,7 @@
         display: none;
     }
 
-    .info-content{
+    .info-content {
         padding: 10px;
     }
 
@@ -410,7 +433,38 @@
         display: none;
     }
 
-    .folder-tabs{
+    .folder-tabs {
         bottom: 413px;
+    }
+
+    /* แก้ไขส่วน Gallery ของ Mobile ให้เลื่อนซ้ายขวาได้ */
+    .mobile-bottom-sheet .image-gallery {
+        display: flex;
+        /* เรียงรูปเป็นแถวแนวนอน */
+        gap: 10px;
+        overflow-x: auto;
+        /* เปิดการเลื่อนในแนวนอน */
+        overflow-y: hidden;
+        /* ปิดการเลื่อนแนวตั้ง */
+        white-space: nowrap;
+        /* ป้องกันการขึ้นบรรทัดใหม่ */
+        width: 100%;
+        padding: 0 15px;
+        -webkit-overflow-scrolling: touch;
+        /* ทำให้ลื่นขึ้นบน iPhone */
+
+        /* ย้ายจาก inline ใน HTML มาไว้ที่นี่ */
+        position: fixed;
+        bottom: 28px;
+    }
+
+    .mobile-bottom-sheet .image-gallery img {
+        width: 200px;
+        /* กำหนดความกว้างคงที่ */
+        height: 130px;
+        flex-shrink: 0;
+        /* สำคัญมาก: ห้ามโดนบีบรูปเด็ดขาด! */
+        object-fit: cover;
+        border-radius: 12px;
     }
 }

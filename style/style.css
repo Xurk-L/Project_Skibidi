@@ -25,7 +25,7 @@ body {
   font-family: "Prompt", sans-serif;
 }
 
-input, button, select, textarea {
+input, button, select, textarea, ::placeholder {
   font-family: "Prompt", sans-serif;
 }
 

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skibidi Maps</title>
+    <link rel="stylesheet" href="style/style.css">
+
+</head>
+
+<body>
+    <div class="profile-box">
+        <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="profile">
+    </div>
+
+    <div class="layout">
+
+        <!-- ================= Sidebar ================= -->
+        <aside class="sidebar">
+            <div class="top-section">
+                <div class="logo">
+                    <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
+                        alt="logo" class="logo-icon">
+
+                    <span class="logo-text">Skibidi Maps</span>
+                </div>
+                
+                <form class="search-box">
+                    <input type="text" placeholder="Search location...">
+                    <button type="submit" class="search-btn">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="white">
+                            <path
+                            d="M10 2a8 8 0 105.293 14.293l4.207 4.207 1.414-1.414-4.207-4.207A8 8 0 0010 2zm0 2a6 6 0 110 12 6 6 0 010-12z" />
+                        </svg>
+                    </button>
+                </form>
+            </div>
+
+            <div class="menu">
+                <div class="menu-item active">🏠 Home</div>
+                <a href="add_pin.html" class="menu-item">➕ Add Pin</a>
+
+                <div class="toilet-filter">
+                    <div class="filter-title">Toilet Type</div>
+
+                    <div class="toilet-options">
+                        <div class="toilet-item">🚹</div>
+                        <div class="toilet-item">🚺</div>
+                        <div class="toilet-item">♿</div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- ================= MAP AREA ================= -->
+        <main class="map-area">
+            <div class="map-placeholder">
+                MAP AREA
+            </div>
+        </main>
+    </div>
+
+    <div class="mobile-bottom-sheet">
+
+        <div class="grab-header">
+            <div class="grab-line"></div>
+        </div>
+
+        <div class="bottom-content">
+            <form class="search-box">
+                <input type="text" placeholder="Search location...">
+                <button type="submit" class="search-btn">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="white">
+                        <path
+                            d="M10 2a8 8 0 105.293 14.293l4.207 4.207 1.414-1.414-4.207-4.207A8 8 0 0010 2zm0 2a6 6 0 110 12 6 6 0 010-12z" />
+                    </svg>
+                </button>
+            </form>
+
+            <div class="toilet-filter">
+                <div class="filter-title">Toilet Type</div>
+
+                <div class="toilet-options">
+                    <div class="toilet-item">🚹</div>
+                    <div class="toilet-item">🚺</div>
+                    <div class="toilet-item">♿</div>
+                </div>
+            </div>
+
+            <a href="add_pin.html" class="mobile-add">➕ Add Pin</a>
+        </div>
+
+    </div>
+
+    <script>
+        const toiletItems = document.querySelectorAll(".toilet-item");
+
+        toiletItems.forEach(item => {
+            item.addEventListener("click", () => {
+                item.classList.toggle("active"); // กดได้หลายอัน
+            });
+        });
+
+        const sheet = document.querySelector(".mobile-bottom-sheet");
+        const grabHeader = document.querySelector(".grab-header");
+
+        let isDragging = false;
+        let startY = 0;
+        let startBottom = 0;
+
+        // ตำแหน่งสูงสุด (ตอนมันเปิดสุด)
+        const MAX_BOTTOM = 0;
+
+        // ลากได้ต่ำสุด (ปรับได้ตามต้องการ)
+        const MIN_BOTTOM = -250;
+
+        grabHeader.addEventListener("mousedown", (e) => {
+            isDragging = true;
+            startY = e.clientY;
+            startBottom = parseInt(window.getComputedStyle(sheet).bottom);
+        });
+
+        document.addEventListener("mousemove", (e) => {
+            if (!isDragging) return;
+
+            const delta = startY - e.clientY;
+            let newBottom = startBottom + delta;
+
+            // จำกัดไม่ให้เกินบนสุด
+            if (newBottom > MAX_BOTTOM) newBottom = MAX_BOTTOM;
+
+            // จำกัดไม่ให้ต่ำเกินไป
+            if (newBottom < MIN_BOTTOM) newBottom = MIN_BOTTOM;
+
+            sheet.style.bottom = newBottom + "px";
+        });
+
+        document.addEventListener("mouseup", () => {
+            isDragging = false;
+        });
+    </script>
+</body>
+
+</html>

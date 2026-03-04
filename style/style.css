@@ -1,14 +1,16 @@
+/* 1. แนะนำให้ใช้ Google Fonts เป็นหลักเพื่อให้แสดงผลได้ทุกอุปกรณ์ */
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;700&display=swap');
+
+/* 2. ส่วน @font-face (เก็บไว้ได้หากคุณมีไฟล์ฟอนต์ในโฟลเดอร์ font จริงๆ) */
 @font-face {
   font-family: "Prompt";
-  src: url("font/Prompt-Regular.ttf") format("truetype");
+  /* ตรวจสอบว่าชื่อโฟลเดอร์และชื่อไฟล์ตัวพิมพ์เล็ก-ใหญ่ตรงกันเป๊ะๆ */
+  src: url("../font/Prompt-Regular.ttf") format("truetype");
+  font-display: swap;
 }
 
 html {
   scroll-behavior: smooth;
-}
-
-* {
-  font-family: "Prompt";
 }
 
 * {
@@ -256,7 +258,7 @@ body {
 }
 
 .grab-header:active {
-    cursor: grabbing;
+  cursor: grabbing;
 }
 
 /* เส้นขาว ---- */

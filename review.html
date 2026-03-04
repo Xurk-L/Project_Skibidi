@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skibidi Maps: Review</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/report.css">
+
+</head>
+
+<style>
+    .confirm-btn:hover {
+        box-shadow: 0 8px 0 #d4a93f;
+    }
+</style>
+
+<body>
+    <div style="margin: 50px 0 0 40px;">
+        <a style="text-decoration: none;" class="close-btn" onclick="history.back()">✕</a>
+    </div>
+
+    <div class="container">
+        <div class="container-content">
+            <h1 style="margin-right: auto;">Review</h1>
+            <div class="card" style="border: 2px solid #FFD270 !important;">
+                <div class="user-reviews">
+                    <div class="profile">
+                        <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
+                            alt="">
+                    </div>
+                    <span class="username">Username</span>
+                </div>
+
+                <hr color="#D9D9D9">
+                <input type="text" placeholder="ห้องน้ำมีปัญหาอะไร? ...">
+            </div>
+
+            <div class="upload-section">
+                <p class="upload-label">เพิ่มรูปภาพ <span>(ไม่บังคับ)</span></p>
+                <div class="upload-container">
+                    <label class="upload-box">
+                        <input type="file" accept="image/*" hidden>
+                        <div class="plus-icon">+</div>
+                    </label>
+                </div>
+            </div>
+
+            <div class="tag-section">
+                <p class="tag-label">ระบุปัญหาเพิ่มเติม <span>(เลือกได้มากกว่า 1)</span></p>
+                <div class="tags-container">
+                    <div class="tag-item" onclick="toggleTag(this)">🚽 ชักโครก</div>
+                    <div class="tag-item" onclick="toggleTag(this)">💦 สายฉีด</div>
+                    <div class="tag-item" onclick="toggleTag(this)">👣 ส้วมซึม</div>
+                    <div class="tag-item" onclick="toggleTag(this)">👨 โถปัสสาวะ</div>
+                    <div class="tag-item" onclick="toggleTag(this)">🧻 ทิชชู่</div>
+                    <div class="tag-item" onclick="toggleTag(this)">✨ สะอาด</div>
+                </div>
+            </div>
+
+            <button class="confirm-btn" style="background-color: #FFD270;"">Confirm</button>
+        </div>
+    </div>
+
+    <script>
+        function toggleTag(element) {
+            element.classList.toggle('selected');
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,128 @@
+.loading-page {
+    width: 100%;
+    height: 100vh;
+    background-color: #ffffff;
+    position: fixed;
+    /* ใช้ fixed เพื่อให้ทับทุกอย่าง */
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+
+    /* เรียกใช้ Animation ตอนเข้า (เลื่อนลง) */
+    animation: slideInDown 0.6s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+/* Animation ขาเข้า: เลื่อนจากบนลงมาที่ตำแหน่งปกติ */
+@keyframes slideInDown {
+    from {
+        transform: translateY(-100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+/* Animation ขาออก: เลื่อนจากตำแหน่งปกติกลับขึ้นไปข้างบน */
+.slide-out-up {
+    animation: slideOutUp 0.6s cubic-bezier(0.5, 0, 0.75, 0) forwards !important;
+}
+
+@keyframes slideOutUp {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-100%);
+    }
+}
+
+/* แถบสีเหลืองด้านบนโค้งๆ */
+.top-yellow-bar {
+    width: 100%;
+    height: 25%;
+    background-color: #FFD270;
+    /* สีเหลืองหลักของคุณ */
+    border-bottom-left-radius: 100px;
+    /* ทำให้โค้งมนตามรูป */
+}
+
+.loading-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* ตัวหมุน Loading */
+.spinner-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 100px;
+    /* ดันตัวอักษรขึ้นไปหน่อย */
+}
+
+.loader {
+    width: 30px;
+    height: 30px;
+    border: 4px solid #FFF1D4;
+    /* สีพีชอ่อน */
+    border-top: 4px solid #FFD270;
+    /* สีเหลืองเข้ม */
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loading-text {
+    font-size: 24px;
+    font-weight: 700;
+    color: #000;
+}
+
+/* ตัวละครด้านล่าง */
+.character-container {
+    position: absolute;
+    bottom: 50px;
+}
+
+.character-container img {
+    width: 120px;
+}
+
+/* เพิ่มลูกเล่นตัวละครลอยขึ้นลงเบาๆ */
+.floating-ani {
+    animation: floating 2s ease-in-out infinite;
+}
+
+@keyframes floating {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}

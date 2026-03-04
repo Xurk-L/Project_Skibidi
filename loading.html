@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading - Skibidi Maps</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/loading.css">
+</head>
+
+<body>
+    <div class="loading-page">
+        <div class="top-yellow-bar"></div>
+
+        <div class="loading-content">
+            <div class="spinner-container">
+                <div class="loader"></div>
+                <span class="loading-text">Loading ...</span>
+            </div>
+
+            <div class="character-container">
+                <img src="path/to/your/poop-character.png" alt="Skibidi Character" class="floating-ani">
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const targetPage = urlParams.get('target') || 'index.html';
+            const loadingPage = document.querySelector('.loading-page');
+
+            // 1. ตั้งเวลาจำลองการโหลด (เช่น 2 วินาที)
+            setTimeout(() => {
+
+                // 2. เมื่อโหลดเสร็จ ให้ใส่คลาส 'slide-out-up' เพื่อเริ่มเล่น Animation ขาออก
+                loadingPage.classList.add('slide-out-up');
+
+                // 3. รอให้ Animation เล่นจบ (0.6 วินาที ตามที่ตั้งใน CSS) แล้วค่อยเปลี่ยนหน้า
+                setTimeout(() => {
+                    window.location.href = targetPage;
+                }, 600);
+
+            }, 1500);
+        });
+    </script>
+</body>
+
+
+</html>

@@ -64,8 +64,52 @@
                     <h2 class="place-title">ห้องน้ำพารวย คณะวิทย์ มข.</h2>
 
                     <div class="rating">
-                        ⭐ 4.2/5 (12) • 8 นาที
+                        ⭐ 4.2/5 (12) <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 24" width="18px"
+                            height="18px" fill="none" stroke="#FFD270" stroke-width="1" stroke-linecap="round"
+                            stroke-linejoin="round" style="vertical-align: middle;">
+
+                            <!-- ล้อ -->
+                            <circle cx="5" cy="18" r="4" />
+                            <circle cx="20" cy="18" r="4" />
+
+                            <!-- โครงจักรยาน -->
+                            <path d="M5 18 L8 10 L11 18 " />
+                            <line x1="8" y1="10" x2="17" y2="10" />
+                            <line x1="17" y1="10" x2="11" y2="18" />
+                            <line x1="10" y1="10" x2="8" y2="6" />
+                            <line x1="7" y1="6" x2="10" y2="6" />
+                            <line x1="9" y1="18" x2="11" y2="18" />
+                            <line x1="20" y1="18" x2="16" y2="6" />
+                            <line x1="16" y1="6" x2="18" y2="6" />
+                        </svg> • 8 นาที
                     </div>
+                    <a href="report.html"
+                        style="font-size: 13px; text-decoration: none; display: flex; flex-direction: column; align-items: center; width: 13px; margin-left: 12px; color: #BF2626; cursor: pointer;">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 24" width="18px" height="18px"
+                            fill="none" stroke="#BF2626" stroke-width="2.5" stroke-linecap="round"
+                            stroke-linejoin="round" style="vertical-align: middle;">
+
+                            <!-- เสาธง -->
+                            <line x1="4" y1="4" x2="4" y2="21" />
+
+                            <!-- ธงผืนซ้าย -->
+                            <path d="M4 4 
+           H13 
+           Q16 4 16 7 
+           V10 
+           Q16 13 13 13 
+           H4" />
+
+                            <!-- ธงผืนขวา -->
+                            <path d="M16 8 
+           H20 
+           Q23 8 23 11 
+           V14 
+           Q23 17 20 17 
+           H13 
+           Q10 17 10 14" />
+                        </svg>
+                        Report</a>
 
                     <div class="info-section">
                         <h4>รายละเอียด</h4>
@@ -98,7 +142,10 @@
 
                 <!-- ================= REVIEWS CONTENT ================= -->
                 <div class="tab-content" id="reviews-content">
-                    <h2 class="place-title">Reviews</h2>
+                    <div class="reviews-header-desktop">
+                        <h2 class="place-title">Reviews</h2>
+                        <a href="review.html" class="addreview-btn-desktop">Add Review</a>
+                    </div>
 
                     <div class="review-card">
                         <p><Strong>Username</Strong></p>
@@ -212,7 +259,6 @@
                     <div class="flex" style="gap: 5px; flex-wrap: wrap;">
                         <span class="box-tags">ชักโครก</span>
                         <span class="box-tags">สายฉีด</span>
-                        <span class="box-tags">โถปัสสาวะ</span>
                         <span class="box-tags">ทิชชู่</span>
                     </div>
                 </div>
@@ -226,11 +272,50 @@
             <div class="reviews-content" id="reviews-content">
                 <div class="top-header">
                     <div class="header-left">
-                        <h1>test</h1>
+                        <p>⭐4.2/5 (12)</p>
+                        <div class="progress-container">
+                            <div class="progress-bar"></div>
+                        </div>
+                        <p style="color: #34A853;">ดี</p>
                     </div>
 
                     <div class="header-right">
-                        <h1>test</h1>
+                        <a href="review.html" style="text-decoration: none; color: #000000;" class="addreview-btn">Add
+                            Review</a>
+                    </div>
+                </div>
+
+                <!-- Bottom content -->
+                <div class="bottom-content">
+                    <hr class="full-width-hr">
+
+                    <div class="scroll-area">
+                        <div class="user-reviews">
+                            <div class="profile">
+                                <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
+                                    alt="">
+                            </div>
+
+                            <div class="user-detail">
+                                <span class="username">Username</span>
+                                <p class="user-review">สะอาดมาก มาตอนเช้าไม่ค่อยมีคน</p>
+                                <p>⭐⭐⭐⭐</p>
+                            </div>
+                        </div>
+
+                        <hr>
+                        <div class="user-reviews">
+                            <div class="profile">
+                                <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
+                                    alt="">
+                            </div>
+
+                            <div class="user-detail">
+                                <span class="username">Username</span>
+                                <p class="user-review">สะอาดมาก มาตอนเช้าไม่ค่อยมีคน</p>
+                                <p>⭐⭐⭐⭐⭐</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -240,34 +325,45 @@
     </div>
 
     <script>
-        const tabs = document.querySelectorAll(".side-tab");
-        const contents = document.querySelectorAll(".tab-content");
-
-        tabs.forEach(tab => {
-            tab.addEventListener("click", () => {
-
-                // เอา active ออกจากทุก tab
-                tabs.forEach(t => t.classList.remove("active"));
-                tab.classList.add("active");
-
-                // ซ่อนทุก content
-                contents.forEach(c => c.classList.remove("active"));
-
-                // เช็คว่าเป็นปุ่มไหน
-                if (tab.textContent.trim() === "Directions") {
-                    document.getElementById("directions-content").classList.add("active");
-                } else {
-                    document.getElementById("reviews-content").classList.add("active");
-                }
-            });
-        });
-
         document.addEventListener("DOMContentLoaded", () => {
+            // --- ส่วนที่ 1: จัดการ Side Tabs (Desktop) ---
+            const sideTabs = document.querySelectorAll(".side-tab");
+            const sideContents = document.querySelectorAll(".tab-content");
+
+            sideTabs.forEach(tab => {
+                tab.addEventListener("click", () => {
+                    const tabName = tab.textContent.trim().toLowerCase();
+
+                    // เปลี่ยนสถานะปุ่ม Side Tab
+                    sideTabs.forEach(t => t.classList.remove("active"));
+                    tab.classList.add("active");
+
+                    // ซ่อน Content ทั้งหมดก่อน
+                    sideContents.forEach(c => {
+                        c.classList.remove("active");
+                        c.style.display = "none";
+                    });
+
+                    // แสดง Content ตามเงื่อนไขที่ต้องการ
+                    const targetId = tabName === "directions" ? "directions-content" : "reviews-content";
+                    const targetContent = document.getElementById(targetId);
+
+                    if (targetContent) {
+                        // กำหนด display ตามหน้า
+                        targetContent.style.display = (tabName === "directions") ? "block" : "block";
+
+                        setTimeout(() => {
+                            targetContent.classList.add("active");
+                        }, 10);
+                    }
+                });
+            });
+
+            // --- ส่วนที่ 2: จัดการ Folder Tabs (Mobile Bottom Sheet) ---
             const folderTabs = document.querySelectorAll(".folder-tab");
 
-            // ฟังก์ชันสำหรับเคลียร์ Content ทั้งหมด
-            function hideAllContent() {
-                // ค้นหาทั้ง 2 คลาสที่คุณแยกไว้
+            function hideAllMobileContent() {
+                // ค้นหาคลาสเนื้อหาในมือถือที่คุณใช้
                 const contents = document.querySelectorAll(".directions-content, .reviews-content");
                 contents.forEach(content => {
                     content.style.display = "none";
@@ -277,21 +373,24 @@
 
             folderTabs.forEach(tab => {
                 tab.addEventListener("click", () => {
-                    // 1. จัดการตัวแปรชื่อ Tab (แปลงเป็นตัวเล็ก)
-                    const tabName = tab.textContent.trim().toLowerCase(); // จะได้ "directions" หรือ "reviews"
+                    const tabName = tab.textContent.trim().toLowerCase();
 
-                    // 2. อัปเดตสถานะปุ่ม Tab (Animation)
+                    // อัปเดตสถานะปุ่ม Tab ในมือถือ
                     folderTabs.forEach(t => t.classList.remove("active"));
                     tab.classList.add("active");
 
-                    // 3. สลับ Content
-                    hideAllContent();
+                    // สลับ Content
+                    hideAllMobileContent();
 
-                    // ค้นหา Element ที่มีคลาสตรงกับชื่อ Tab
                     const targetContent = document.querySelector(`.${tabName}-content`);
                     if (targetContent) {
-                        targetContent.style.display = "flex";
-                        // ใช้ setTimeout เล็กน้อยเพื่อให้ CSS Transition ทำงาน
+                        // กำหนด display: directions = flex, reviews = block
+                        if (tabName === "directions") {
+                            targetContent.style.display = "flex";
+                        } else {
+                            targetContent.style.display = "block";
+                        }
+
                         setTimeout(() => {
                             targetContent.classList.add("active");
                         }, 10);

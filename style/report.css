@@ -1,0 +1,203 @@
+.close-btn {
+    font-size: 20px;
+    cursor: pointer;
+    color: #999;
+    transition: 0.2s ease;
+}
+
+.icon{
+    width: 80px;
+    height: 80px;
+    background-color: grey;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.container-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    width: 80%;
+    height: 100%;
+}
+
+.card {
+    width: 100%;
+    height: 244px;
+    border: 2px solid #BF2626;
+    border-radius: 20px;
+    padding: 10px;
+    box-shadow: 3px 4px 4px #00000040;
+}
+
+.user-reviews {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.profile {
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 4px 4px #00000040;
+    z-index: 2000;
+    cursor: pointer;
+}
+
+.profile img {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+input {
+    background: none;
+    border: none;
+    width: 100%;
+    /* ไม่ใช้ height: 150px; */
+    padding-top: 10px;
+    /* เว้นจากขอบบน */
+    padding-bottom: 120px;
+    /* ใช้ padding ด้านล่างถ่างให้กล่องดูสูงแทน */
+    outline: none;
+}
+
+/* ส่วนหัวข้อเพิ่มรูปภาพ */
+.upload-section {
+    width: 100%;
+    margin-top: 25px;
+}
+
+.upload-label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.upload-label span {
+    color: #999;
+    font-weight: 400;
+    font-size: 12px;
+}
+
+/* กล่องอัปโหลดรูป */
+.upload-container {
+    display: flex;
+    gap: 10px;
+}
+
+.upload-box {
+    width: 100%;
+    height: 70px;
+    /* ทรงสี่เหลี่ยมผืนผ้าตามรูปตัวอย่าง */
+    border: 2px solid #ccc;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.2s ease;
+    background: white;
+}
+
+.upload-box:hover {
+    border-color: #FFD270;
+    background: #fffcf5;
+}
+
+.plus-icon {
+    font-size: 30px;
+    color: #666;
+    font-weight: 300;
+}
+
+/* ปุ่ม Confirm สีแดงตามรูปตัวอย่าง */
+.confirm-btn {
+    margin-top: 40px;
+    width: 80%;
+    max-width: 300px;
+    padding: 15px;
+    background: #BF2626;
+    /* สีแดงเข้มตามภาพ */
+    color: white;
+    border: none;
+    border-radius: 40px;
+    font-size: 18px;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(191, 38, 38, 0.3);
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.confirm-btn:hover {
+    background-color: #BF2626;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 0 #a31f1f;
+}
+
+.tag-section {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.tag-label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 12px;
+}
+
+.tag-label span {
+    color: #999;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    /* ให้ Tag ขึ้นบรรทัดใหม่เมื่อล้นจอ */
+    gap: 8px;
+}
+
+.tag-item {
+    padding: 8px 16px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    font-size: 13px;
+    color: #555;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    user-select: none;
+    /* ป้องกันการคลุมดำตอนกดย้ำๆ */
+}
+
+/* สไตล์เมื่อ Tag ถูกเลือก */
+.tag-item.selected {
+    background: #FFD270;
+    /* สีแดงเดียวกับปุ่ม Confirm */
+    color: white;
+    border-color: #FFD270;
+    box-shadow: 0 4px 8px rgba(191, 38, 38, 0.2);
+}
+
+@media (max-width: 956px) {
+    .container-content{
+        width: 100%;
+    }
+}

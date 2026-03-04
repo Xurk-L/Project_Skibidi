@@ -182,7 +182,6 @@ textarea,
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
   z-index: 2000;
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .profile-box img {

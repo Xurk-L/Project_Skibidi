@@ -1,0 +1,195 @@
+/* ================= ADD PIN PAGE ================= */
+
+.addpin-wrapper {
+    width: 100%;
+    height: 100%;
+    background: white;
+    padding: 40px;
+    /* border-radius: 20px; */
+    display: flex;
+    flex-direction: column;
+}
+
+.addpin-title {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 26px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* ================= INPUT ================= */
+
+.input-container {
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    width: 100%;
+}
+
+.input-container input {
+    width: 70%;
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.05);
+    transition: 0.2s ease;
+}
+
+.input-container input:focus {
+    outline: none;
+    border-color: #FFD270;
+    box-shadow: 0 0 0 3px rgba(255, 210, 112, 0.3);
+}
+
+/* ================= TAG LABEL ================= */
+
+.tag-label {
+    font-size: 13px;
+    margin-top: 25px;
+    color: #333;
+}
+
+.tag-label span {
+    color: #999;
+}
+
+/* ================= TAGS ================= */
+
+.container-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.tags {
+    padding: 6px 16px;
+    font-size: 12px;
+    background: #e5e5e5;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.2s ease;
+    user-select: none;
+}
+
+.tags:hover {
+    background: #dcdcdc;
+}
+
+.tags.active {
+    background: #1C89E2;
+    color: white;
+}
+
+/* ================= MAP ================= */
+
+.map-label {
+    font-size: 13px;
+    margin-top: 25px;
+    color: #333;
+}
+
+.map-pin {
+    width: 100%;
+    height: 250px;
+    background: #ddd;
+    border-radius: 5px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #777;
+    font-size: 14px;
+}
+
+/* ================= SEGMENT BUTTON ================= */
+
+/* จัดก้อนปุ่มให้อยู่กลาง */
+.segment-btn {
+    display: flex;
+    width: 70%;
+    margin: 40px auto 0 auto;
+    /* 👈 ตรงนี้ทำให้กลาง */
+    border-radius: 40px;
+    overflow: hidden;
+    border: 2px solid #FFD270;
+}
+
+/* ปุ่มพื้นฐาน */
+.segment-btn button {
+    flex: 1;
+    padding: 14px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+/* เส้นแบ่ง */
+.segment-btn button:first-child {
+    border-right: 1px solid #FFD270;
+}
+
+/* ===== ซ้าย (Confirm) ===== */
+.confirm {
+    background: #FFD270;
+    color: white;
+}
+
+/* hover แบบฐานแข็ง */
+.confirm:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 0 #d4a93f, 0 8px 18px rgba(0, 0, 0, 0.15);
+    /* 👈 ฐานแข็ง */
+}
+
+/* กดลง */
+.confirm:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 0 #d4a93f;
+}
+
+/* ===== ขวา (Cancel) ===== */
+.cancel {
+    background: white;
+    color: #333;
+}
+
+/* hover แบบลอยธรรมดา */
+.cancel:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* กดลง */
+.cancel:active {
+    transform: translateY(1px);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width: 956px) {
+    body.addpin-page .profile-box {
+        display: none;
+    }
+
+    .input-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .input-container input{
+        width: 100%;
+    }
+
+    .map-pin{
+        height: 400px;
+    }
+
+    .segment-btn{
+        margin: 280px auto 0;
+    }
+}

@@ -1,0 +1,415 @@
+/* ================= INFO SIDEBAR ================= */
+
+.info-sidebar {
+    width: 420px;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 4px 0 25px rgba(0, 0, 0, 0.15);
+    position: relative;
+    z-index: 1000;
+}
+
+/* ================= TOP SECTION ================= */
+
+.info-top {
+    padding: 30px 30px 20px 30px;
+    border-bottom: 1px solid #eee;
+}
+
+/* ===== Logo ===== */
+
+.info-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.info-logo img {
+    width: 38px;
+    height: 38px;
+    /* border-radius: 12px; */
+    object-fit: cover;
+}
+
+.info-app-name {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+
+.main-name {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.sub-name {
+    font-size: 14px;
+    color: #999;
+    font-weight: 500;
+}
+
+/* ===== Logo Layout ===== */
+
+.info-logo {
+    display: flex;
+    justify-content: space-between;
+    /* ดัน X ไปขวา */
+    align-items: center;
+}
+
+/* ฝั่งซ้าย */
+.logo-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* ปุ่มปิด */
+.close-btn {
+    font-size: 20px;
+    cursor: pointer;
+    color: #999;
+    transition: 0.2s ease;
+}
+
+.close-btn:hover {
+    color: #000;
+    transform: scale(1.1);
+}
+
+/* ===== Search ===== */
+
+.info-search {
+    margin-top: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #f3f3f3;
+    padding: 12px 16px;
+    border-radius: 30px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.info-search svg {
+    fill: #888;
+}
+
+.info-search input {
+    border: none;
+    background: transparent;
+    width: 100%;
+    outline: none;
+    font-size: 14px;
+}
+
+/* ================= SIDE FOLDER TABS ================= */
+
+.side-tabs {
+    position: absolute;
+    top: 150px;
+    left: 400px;
+    display: flex;
+    flex-direction: column;
+    /* gap: -10px; */
+    z-index: 1;
+}
+
+.side-tab {
+    width: 120px;
+    padding: 14px;
+    text-align: center;
+    border-radius: 0 20px 20px 0;
+    background: #FFD270;
+    color: #ffffff;
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.side-tab+.side-tab {
+    margin-top: -10px;
+}
+
+.side-tab.active {
+    background: #ffffff;
+    color: #000000;
+    font-weight: 600;
+    transform: translateX(15px);
+    box-shadow: 0 4px 4px #00000040;
+    z-index: 10;
+}
+
+/* ปรับตำแหน่งกลุ่ม tabs */
+.folder-tabs {
+    position: fixed;
+    bottom: -100px; /* ความสูงของ sheet */
+    left: 20px;
+    display: flex;
+    z-index: 990; /* ให้น้อยกว่า sheet (999) */
+    pointer-events: auto;
+    transition: 0.4s ease;
+}
+
+.folder-tab {
+    padding: 10px 25px; /* เพิ่ม padding ให้กว้างขึ้นเล็กน้อย */
+    background-color: #FFD270;
+    color: #ffffff;
+    border-radius: 15px 15px 0 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: -2px; /* ให้จมลงไปใน sheet นิดหน่อย */
+    position: relative;
+}
+
+/* ทำให้ Tab ซ้อนกัน */
+.folder-tab + .folder-tab {
+    margin-left: -20px; /* ขยับ Tab ตัวที่สองมาทับตัวแรก */
+    z-index: 1; /* ตัวหลังอยู่บนตัวแรก (หรือปรับตามชอบ) */
+}
+
+/* ปรับแต่ง Tab ที่ Active */
+.folder-tab.active {
+    background: #ffffff;
+    color: #000000;
+    font-weight: 600;
+    /* ใส่ transform ทั้ง X และ Y ตามที่ต้องการ */
+    transform: translate(0px, -8px); 
+    z-index: 5; /* เมื่อ active ให้ลอยขึ้นมาเด่นกว่าเพื่อน */
+}
+
+.folder-tab.directions.active{
+    box-shadow: 4px 1px 4px #00000040;
+}
+
+.folder-tab.reviews.active{
+    box-shadow: -4px 1px 4px #00000040;
+}
+
+
+.rating {
+    font-size: 13px;
+}
+
+.flex{
+    display: flex;
+}
+
+.box-tags{
+    padding: 5px;
+    background-color: #D9D9D9;
+    font-size: 10px;
+    flex: 30%;
+    text-align: center;
+}
+
+/* ================= CONTENT ================= */
+
+.info-content {
+    padding: 25px 40px 40px;
+}
+
+.place-title {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.rating {
+    margin-top: 8px;
+    color: #666;
+}
+
+.info-section {
+    margin-top: 20px;
+}
+
+.info-section h4 {
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.toilet-icons {
+    display: flex;
+    gap: 20px;
+    font-size: 28px;
+    margin-top: 15px;
+}
+
+.tags-row {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.tags-row span {
+    background: #e5e5e5;
+    padding: 6px 12px;
+    border-radius: 15px;
+    font-size: 12px;
+}
+
+.direction-btn {
+    margin-top: 20px;
+    padding: 14px;
+    width: 160px;
+    background: #FFD270;
+    border: none;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 6px 0 #d4a93f;
+    transition: 0.2s ease;
+}
+
+.direction-btn:hover {
+    background-color: #ffffff;
+    border: 1px solid #FFD270;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 0 #d4a93f;
+}
+
+/* ===== Gallery ===== */
+
+.image-gallery {
+    margin-top: 25px;
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+}
+
+.image-gallery img {
+    width: 200px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.info-content::-webkit-scrollbar,
+.image-gallery::-webkit-scrollbar {
+    display: none;
+}
+
+/* ===== TAB CONTENT SWITCH ===== */
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* ===== REVIEW CARD ===== */
+
+.review-card {
+    background: #f5f5f5;
+    padding: 15px;
+    border-radius: 12px;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+/* ===== MOBILE PIN INFO ===== */
+
+.mobile-bottom-sheet {
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+.sheet-tabs {
+    position: absolute;
+    top: -35px;
+    left: 20px;
+    display: flex;
+    gap: 5px;
+}
+
+.sheet-tab {
+    padding: 10px 18px;
+    background: #ddd;
+    border-radius: 12px 12px 0 0;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.sheet-tab.active {
+    background: #FFD270;
+}
+
+.sheet-tabs {
+    position: absolute;
+    top: -35px;
+    left: 20px;
+    display: flex;
+    gap: 5px;
+}
+
+.sheet-tab {
+    padding: 10px 18px;
+    background: #ddd;
+    border-radius: 12px 12px 0 0;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.sheet-tab.active {
+    background: #FFD270;
+}
+
+.directions-content{
+    display: flex;
+    padding: 10px;
+    gap: 10px;
+    width: 100%;
+}
+.directions-content .left{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+.directions-content .right{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+/* ================= Reviews ================= */
+
+.reviews-content{
+    padding: 10px;
+    width: 100%;
+}
+
+.top-header{
+    display: flex;
+    width: 100%;
+}
+
+.header-left{
+    flex: 1;
+}
+
+.header-right{
+    flex: 1;
+}
+
+/* ================= MOBILE DESIGN ================= */
+
+@media (max-width: 956px) {
+    .info-sidebar {
+        display: none;
+    }
+
+    .info-content{
+        padding: 10px;
+    }
+
+    .side-tabs {
+        display: none;
+    }
+
+    .folder-tabs{
+        bottom: 413px;
+    }
+}

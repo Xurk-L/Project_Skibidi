@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Skibidi Maps: Pin Info</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/pin_info.css">
+
+</head>
+
+<body>
+
+    <!-- Profile -->
+    <div class="profile-box">
+        <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png">
+    </div>
+
+    <div class="layout">
+
+        <!-- ================= INFO SIDEBAR ================= -->
+        <aside class="info-sidebar">
+
+            <!-- 🔥 TOP SECTION -->
+            <div class="info-top">
+
+                <div class="info-logo">
+
+                    <div class="logo-left">
+                        <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
+                            alt="logo">
+
+                        <div class="info-app-name">
+                            <span class="main-name">Skibidi Maps</span>
+                        </div>
+                    </div>
+
+                    <!-- ❌ CLOSE BUTTON -->
+                    <a href="main.html" style="text-decoration: none;" class="close-btn">✕</a>
+
+                </div>
+
+                <form class="search-box" style="margin-top: 10px;">
+                    <input type="text" placeholder="Search location...">
+                    <button type="submit" class="search-btn" style="width: 40px !important;">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="white">
+                            <path
+                                d="M10 2a8 8 0 105.293 14.293l4.207 4.207 1.414-1.414-4.207-4.207A8 8 0 0010 2zm0 2a6 6 0 110 12 6 6 0 010-12z" />
+                        </svg>
+                    </button>
+                </form>
+
+            </div>
+
+
+
+            <!-- ================= CONTENT ================= -->
+            <div class="info-content">
+
+                <!-- ===== TAB 1 : DIRECTIONS ===== -->
+                <div class="tab-content active" id="directions-content">
+
+                    <h2 class="place-title">ห้องน้ำพารวย คณะวิทย์ มข.</h2>
+
+                    <div class="rating">
+                        ⭐ 4.2/5 (12) • 8 นาที
+                    </div>
+
+                    <div class="info-section">
+                        <h4>รายละเอียด</h4>
+                        <p>
+                            เป็นห้องน้ำระดับรองกลาง ใช้ดี เดินลงไปแล้วตรงไปจะเจอห้องน้ำเลย
+                        </p>
+                    </div>
+
+                    <div class="toilet-icons">
+                        <div>🚹</div>
+                        <div>🚺</div>
+                    </div>
+
+                    <div class="tags-row">
+                        <span>ชักโครก</span>
+                        <span>สายฉีด</span>
+                        <span>โถปัสสาวะ</span>
+                        <span>ทิชชู่</span>
+                    </div>
+
+                    <button class="direction-btn">Directions</button>
+
+                    <!-- 🔥 IMAGE GALLERY -->
+                    <div class="image-gallery">
+                        <img src="https://images.unsplash.com/photo-1598300053653-2a5f09f2b0c5">
+                        <img src="https://images.unsplash.com/photo-1505691723518-36a5ac3be353">
+                    </div>
+
+                </div>
+
+                <!-- ================= REVIEWS CONTENT ================= -->
+                <div class="tab-content" id="reviews-content">
+                    <h2 class="place-title">Reviews</h2>
+
+                    <div class="review-card">
+                        <p><Strong>Username</Strong></p>
+                        ⭐⭐⭐⭐☆
+                        <p>สะอาดมาก มาตอนเช้าไม่ค่อยมีคน</p>
+                    </div>
+
+                    <div class="review-card">
+                        <p><Strong>Username</Strong></p>
+                        ⭐⭐⭐☆☆
+                        <p>พอใช้ได้ แต่บางครั้งมีกลิ่น</p>
+                    </div>
+
+                    <div class="review-card">
+                        <p><Strong>Username</Strong></p>
+                        ⭐⭐⭐⭐⭐
+                        <p>ดีมาก ใกล้ตึกเรียน เดินสะดวก</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </aside>
+
+        <!-- 🔥 Side Folder Tabs -->
+        <div class="side-tabs">
+            <div class="side-tab active">Directions</div>
+            <div class="side-tab">Reviews</div>
+        </div>
+
+        <!-- ================= MAP AREA ================= -->
+        <main class="map-area">
+            <div class="map-placeholder">
+                MAP AREA
+            </div>
+        </main>
+
+        <!-- ================= MOBILE BOTTOM SHEET ================= -->
+
+        <div class="folder-tabs">
+            <div class="folder-tab directions active">Directions</div>
+            <div class="folder-tab reviews">Reviews</div>
+        </div>
+
+        <div class="mobile-bottom-sheet">
+            <div class="directions-content" id="directions-content">
+                <div class="left">
+                    <button class="direction-btn">Directions</button>
+
+                    <p style="margin-top: 20px;"><strong>รายละเอียด</strong></p>
+                    <span style="font-size: 13px; margin-bottom: 8px;">เดินขึ้นตึกมาจะมีบรรไดลงทางใต้ดิน
+                        เดินลงไปแล้วตรงไปจะเจอห้องน้ำเลย.</span>
+
+                    <a href="report.html"
+                        style="font-size: 13px; display: flex; flex-direction: column; align-items: center; width: 13px; margin-left: 12px; color: #BF2626; cursor: pointer;">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 24" width="18px" height="18px"
+                            fill="none" stroke="#BF2626" stroke-width="2.5" stroke-linecap="round"
+                            stroke-linejoin="round" style="vertical-align: middle;">
+
+                            <!-- เสาธง -->
+                            <line x1="4" y1="4" x2="4" y2="21" />
+
+                            <!-- ธงผืนซ้าย -->
+                            <path d="M4 4 
+           H13 
+           Q16 4 16 7 
+           V10 
+           Q16 13 13 13 
+           H4" />
+
+                            <!-- ธงผืนขวา -->
+                            <path d="M16 8 
+           H20 
+           Q23 8 23 11 
+           V14 
+           Q23 17 20 17 
+           H13 
+           Q10 17 10 14" />
+                        </svg>
+                        Report</a>
+                </div>
+
+                <div class="right">
+                    <p><strong>ห้องน้ำพารวย คณะวิทย์ มข.</strong></p>
+                    <p class="rating">⭐4.5 (12) <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 24" width="18px"
+                            height="18px" fill="none" stroke="#FFD270" stroke-width="1" stroke-linecap="round"
+                            stroke-linejoin="round" style="vertical-align: middle;">
+
+                            <!-- ล้อ -->
+                            <circle cx="5" cy="18" r="4" />
+                            <circle cx="20" cy="18" r="4" />
+
+                            <!-- โครงจักรยาน -->
+                            <path d="M5 18 L8 10 L11 18 " />
+                            <line x1="8" y1="10" x2="17" y2="10" />
+                            <line x1="17" y1="10" x2="11" y2="18" />
+                            <line x1="10" y1="10" x2="8" y2="6" />
+                            <line x1="7" y1="6" x2="10" y2="6" />
+                            <line x1="9" y1="18" x2="11" y2="18" />
+                            <line x1="20" y1="18" x2="16" y2="6" />
+                            <line x1="16" y1="6" x2="18" y2="6" />
+                        </svg> 8min</p>
+                    <span style="font-size: 12px; color: #B9B9B9;"><span style="color: #34A853;">เปิด</span> • ปิด
+                        18:00</span>
+
+                    <div class="flex">
+                        <div>🚹</div>
+                        <div>🚺</div>
+                    </div>
+
+                    <div class="flex" style="gap: 5px; flex-wrap: wrap;">
+                        <span class="box-tags">ชักโครก</span>
+                        <span class="box-tags">สายฉีด</span>
+                        <span class="box-tags">โถปัสสาวะ</span>
+                        <span class="box-tags">ทิชชู่</span>
+                    </div>
+                </div>
+
+                <div class="image-gallery" style="margin-left: 10px; position: fixed; bottom: 28px;">
+                    <img src="https://images.unsplash.com/photo-1598300053653-2a5f09f2b0c5">
+                    <img src="https://images.unsplash.com/photo-1505691723518-36a5ac3be353">
+                </div>
+            </div>
+
+            <div class="reviews-content" id="reviews-content">
+                <div class="top-header">
+                    <div class="header-left">
+                        <h1>test</h1>
+                    </div>
+
+                    <div class="header-right">
+                        <h1>test</h1>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        const tabs = document.querySelectorAll(".side-tab");
+        const contents = document.querySelectorAll(".tab-content");
+
+        tabs.forEach(tab => {
+            tab.addEventListener("click", () => {
+
+                // เอา active ออกจากทุก tab
+                tabs.forEach(t => t.classList.remove("active"));
+                tab.classList.add("active");
+
+                // ซ่อนทุก content
+                contents.forEach(c => c.classList.remove("active"));
+
+                // เช็คว่าเป็นปุ่มไหน
+                if (tab.textContent.trim() === "Directions") {
+                    document.getElementById("directions-content").classList.add("active");
+                } else {
+                    document.getElementById("reviews-content").classList.add("active");
+                }
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const folderTabs = document.querySelectorAll(".folder-tab");
+
+            // ฟังก์ชันสำหรับเคลียร์ Content ทั้งหมด
+            function hideAllContent() {
+                // ค้นหาทั้ง 2 คลาสที่คุณแยกไว้
+                const contents = document.querySelectorAll(".directions-content, .reviews-content");
+                contents.forEach(content => {
+                    content.style.display = "none";
+                    content.classList.remove("active");
+                });
+            }
+
+            folderTabs.forEach(tab => {
+                tab.addEventListener("click", () => {
+                    // 1. จัดการตัวแปรชื่อ Tab (แปลงเป็นตัวเล็ก)
+                    const tabName = tab.textContent.trim().toLowerCase(); // จะได้ "directions" หรือ "reviews"
+
+                    // 2. อัปเดตสถานะปุ่ม Tab (Animation)
+                    folderTabs.forEach(t => t.classList.remove("active"));
+                    tab.classList.add("active");
+
+                    // 3. สลับ Content
+                    hideAllContent();
+
+                    // ค้นหา Element ที่มีคลาสตรงกับชื่อ Tab
+                    const targetContent = document.querySelector(`.${tabName}-content`);
+                    if (targetContent) {
+                        targetContent.style.display = "flex";
+                        // ใช้ setTimeout เล็กน้อยเพื่อให้ CSS Transition ทำงาน
+                        setTimeout(() => {
+                            targetContent.classList.add("active");
+                        }, 10);
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>

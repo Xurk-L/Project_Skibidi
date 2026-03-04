@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skibidi Maps: Add pin</title>
+    <link rel="stylesheet" href="style/styles.css">
+    <link rel="stylesheet" href="style/add_pin.css">
+
+</head>
+
+<body class="addpin-page">
+    <div class="profile-box">
+        <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="profile">
+    </div>
+
+    <div class="layout">
+
+        <!-- ================= Sidebar ================= -->
+        <aside class="sidebar">
+            <div class="logo">
+                <span class="logo-text">Skibidi Maps</span>
+                <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
+                    alt="logo" class="logo-icon">
+            </div>
+
+            <form class="search-box">
+                <input type="text" placeholder="Search location...">
+                <button type="submit" class="search-btn">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="white">
+                        <path
+                            d="M10 2a8 8 0 105.293 14.293l4.207 4.207 1.414-1.414-4.207-4.207A8 8 0 0010 2zm0 2a6 6 0 110 12 6 6 0 010-12z" />
+                    </svg>
+                </button>
+            </form>
+
+            <div class="menu">
+                <a href="main.html" class="menu-item">🏠 Home</a>
+                <a href="add_pin.html" class="menu-item active">➕ Add Pin</a>
+
+                <div class="toilet-filter">
+                    <div class="filter-title">Toilet Type</div>
+
+                    <div class="toilet-options">
+                        <div class="toilet-item">🚹</div>
+                        <div class="toilet-item">🚺</div>
+                        <div class="toilet-item">♿</div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- ================= MAP AREA ================= -->
+        <main class="map-area">
+            <div class="addpin-wrapper">
+
+                <h1 class="addpin-title">Add New Pin</h1>
+
+                <div class="input-container">
+                    <input type="text" placeholder="ระบุชื่อสถานที่">
+                </div>
+                <div class="input-container">
+                    <input type="text" placeholder="รายละเอียด...">
+                </div>
+
+
+                <div class="tag-label">
+                    เพิ่ม Tags ห้องน้ำ
+                    <span>(เพิ่มได้หลาย Tag)</span>
+                </div>
+
+                <div class="container-tags">
+                    <div class="tags">ชักโครก</div>
+                    <div class="tags">สายฉีด</div>
+                    <div class="tags">ส้วมซึม</div>
+                    <div class="tags">โถปัสสาวะ</div>
+                    <div class="tags">ทิชชู่</div>
+                </div>
+
+                <div class="map-label">
+                    เลือกจุดที่จะปักหมุด
+                </div>
+
+                <div class="map-pin"></div>
+
+                <div class="segment-btn">
+                    <button class="confirm">Confirm</button>
+                    <button class="cancel" onclick="history.back()">Cancel</button>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script>
+        const toiletItems = document.querySelectorAll(".toilet-item");
+
+        toiletItems.forEach(item => {
+            item.addEventListener("click", () => {
+                item.classList.toggle("active"); // กดได้หลายอัน
+            });
+        });
+
+        const tags = document.querySelectorAll(".tags");
+
+        tags.forEach(tag => {
+            tag.addEventListener("click", () => {
+                tag.classList.toggle("active");
+            });
+        });
+    </script>
+</body>
+
+</html>

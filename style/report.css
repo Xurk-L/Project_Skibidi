@@ -5,19 +5,58 @@
     transition: 0.2s ease;
 }
 
-.icon{
-    width: 80px;
-    height: 80px;
-    background-color: grey;
+/* แก้ไข icon-wrapper ให้รองรับตำแหน่ง Badge */
+.icon-wrapper {
+    position: relative;
+    /* สำคัญ: เพื่อให้ Badge อ้างอิงตำแหน่งได้ */
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+/* เอฟเฟกต์เมื่อเอาเมาส์ไปวาง */
+.icon-wrapper:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* ตั้งค่ารูปภาพหลัก */
+.main-icon {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+/* ตั้งค่าตำแหน่ง Badge ขวาบน */
+.alert-badge {
+    position: absolute;
+    top: -5px;
+    /* ขยับขึ้นไปด้านบน */
+    right: -5px;
+    /* ขยับไปทางขวา */
+    width: 30px;
+    /* ขนาดของเครื่องหมายตกใจ */
+    height: 30px;
+    z-index: 10;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+    /* เพิ่มมิติให้ดูนูนขึ้น */
+}
+
+/* เอฟเฟกต์เมื่อ Hover ที่ตัว wrapper ทั้งชุด */
+.icon-wrapper:hover .alert-badge {
+    transform: scale(1.2) rotate(10deg);
+    transition: 0.2s ease;
+}
+
+/* ปรับ Container ให้ไอคอนอยู่กึ่งกลาง */
 .container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100%;
 }
 
 .container-content {
@@ -197,7 +236,17 @@ input {
 }
 
 @media (max-width: 956px) {
-    .container-content{
+    .container-content {
         width: 100%;
+    }
+
+    .icon-wrapper {
+        width: 100px;
+        height: 100px;
+    }
+
+    .main-icon {
+        width: 100px;
+        height: 100px;
     }
 }

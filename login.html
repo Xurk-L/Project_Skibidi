@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skibidi Maps: Login</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/signup.css">
+</head>
+
+<body>
+
+    <div class="login-container">
+        <div class="login-visual">
+            <div class="visual-content">
+                <img src="image/ChatGPT Image 5 มี.ค. 2569 22_12_29.png" alt="Skibidi Character"
+                    class="floating-character">
+                <h1>Skibidi Maps</h1>
+                <p>ค้นหาห้องน้ำที่ "ใช่" ในเวลาที่ "เร่งรีบ"</p>
+            </div>
+            <div class="circle circle-1"></div>
+            <div class="circle circle-2"></div>
+        </div>
+
+        <div class="login-form-side">
+            <div class="form-wrapper">
+                <h2 class="form-title">ยินดีต้อนรับกลับมา!</h2>
+                <p class="subtitle">เข้าสู่ระบบเพื่อเริ่มการเดินทางของคุณ</p>
+
+                <form id="loginForm">
+                    <div class="input-group">
+                        <label for="username">ชื่อผู้ใช้งาน</label>
+                        <input type="text" id="username" placeholder="Enter your username">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="password">รหัสผ่าน</label>
+                        <input type="password" id="password" placeholder="Enter your password">
+                    </div>
+
+                    <div class="forgot-pass">
+                        <a href="forgot_password.html">ลืมรหัสผ่านใช่ไหม?</a>
+                    </div>
+
+                    <button type="button" class="btn-login" onclick="handleLogin()">เข้าสู่ระบบ</button>
+
+                    <div class="divider">
+                        <span>หรือ</span>
+                    </div>
+
+                    <button type="button" class="btn-google">
+                        <img src="https://www.gstatic.com/images/branding/product/1x/gsa_512dp.png" alt="Google">
+                        Login with Google
+                    </button>
+                </form>
+
+                <p class="register-text">
+                    ยังไม่มีบัญชี? <a href="signup.html">สร้างบัญชีใหม่ที่นี่</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function handleLogin() {
+            // const user = document.getElementById('username').value;
+            // const pass = document.getElementById('password').value;
+
+            // if (user && pass) {
+                // ส่งไปหน้า loading.html พร้อมแนบ parameter ว่าให้ไป index.html ต่อ
+                window.location.href = 'loading.html?target=index.html';
+            // } else {
+                // alert('กรุณากรอกข้อมูลให้ครบถ้วน');
+            // }
+        }
+    </script>
+</body>
+
+</html>
